@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -27,8 +28,17 @@ export default function Header() {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Title */}
-          <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors">
-            Jerry&apos;s LTB
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+            <Image 
+              src="/DefaultLogo.png" 
+              alt="Jerry's LTB Logo" 
+              width={50} 
+              height={50}
+              className="object-contain"
+            />
+            <span className="text-2xl font-bold text-gray-900">
+              Jerry&apos;s LTB
+            </span>
           </Link>
 
           {/* Desktop Navigation - Right Side */}
