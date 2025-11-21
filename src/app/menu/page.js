@@ -1,177 +1,168 @@
 'use client';
 
+import { useState, useEffect, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
 export default function Menu() {
+  const searchParams = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeFilter, setActiveFilter] = useState('all');
   
-  const lugaw = [
-    'Lugaw',
-    'Lugaw with Tokwa\'t Baboy',
-    'Lugaw with Chicken',
-    'Lugaw with Beef',
-    'Arroz Caldo'
+  useEffect(() => {
+    const query = searchParams.get('search') || '';
+    setSearchQuery(query);
+  }, [searchParams]);
+
+  // Unified menu items array with category metadata
+  const menuItems = [
+    // Lugaw items
+    { name: 'Lugaw', category: 'lugaw' },
+    { name: 'Lugaw with Tokwa\'t Baboy', category: 'lugaw' },
+    { name: 'Lugaw with Chicken', category: 'lugaw' },
+    { name: 'Lugaw with Beef', category: 'lugaw' },
+    { name: 'Arroz Caldo', category: 'lugaw' },
+    
+    // Soups items
+    { name: 'Sinigang na Baboy', category: 'soups', image: '/image.png' },
+    { name: 'Tinola', category: 'soups' },
+    { name: 'Nilagang Baka', category: 'soups' },
+    { name: 'Bulalo (if available)', category: 'soups' },
+    
+    // Seafood items
+    { name: 'Sweet & Sour Fish', category: 'seafood' },
+    { name: 'Ginataang Tilapia', category: 'seafood' },
+    { name: 'Daing / Fried Fish', category: 'seafood' },
+    { name: 'Calamares', category: 'seafood' },
+    
+    // Vegetables items
+    { name: 'Pinakbet', category: 'vegetables', image: '/143526-480x270-removebg-preview (1).png' },
+    { name: 'Chop Suey', category: 'vegetables' },
+    { name: 'Laing', category: 'vegetables' },
+    { name: 'Ginisang Mongo', category: 'vegetables' },
+    
+    // Merienda items
+    { name: 'Pancit Canton', category: 'merienda' },
+    { name: 'Spaghetti', category: 'merienda' },
+    { name: 'Palabok', category: 'merienda' },
+    { name: 'Turon', category: 'merienda' },
+    { name: 'Kutsinta / Puto', category: 'merienda' },
+    
+    // Drinks items
+    { name: 'Iced Tea', category: 'drinks' },
+    { name: 'Softdrinks', category: 'drinks' },
+    { name: 'Calamansi Juice', category: 'drinks' },
+    { name: 'Fresh Buko Juice (optional)', category: 'drinks' },
   ];
 
-  const soups = [
-    'Sinigang na Baboy',
-    'Tinola',
-    'Nilagang Baka',
-    'Bulalo (if available)'
+  // Filter categories
+  const filterCategories = [
+    { id: 'all', label: 'All' },
+    { id: 'lugaw', label: 'Lugaw' },
+    { id: 'soups', label: 'Soups' },
+    { id: 'seafood', label: 'Seafood' },
+    { id: 'vegetables', label: 'Vegetables' },
+    { id: 'merienda', label: 'Merienda' },
+    { id: 'drinks', label: 'Drinks' },
   ];
 
-  const seafood = [
-    'Sweet & Sour Fish',
-    'Ginataang Tilapia',
-    'Daing / Fried Fish',
-    'Calamares'
-  ];
+  // Combined filter and search logic
+  const filteredItems = useMemo(() => {
+    let filtered = menuItems;
 
-  const vegetables = [
-    'Pinakbet',
-    'Chop Suey',
-    'Laing',
-    'Ginisang Mongo'
-  ];
+    // Apply category filter
+    if (activeFilter !== 'all') {
+      filtered = filtered.filter(item => item.category === activeFilter);
+    }
 
-  const merienda = [
-    'Pancit Canton',
-    'Spaghetti',
-    'Palabok',
-    'Turon',
-    'Kutsinta / Puto'
-  ];
+    // Apply search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter(item => 
+        item.name.toLowerCase().includes(query)
+      );
+    }
 
-  const drinks = [
-    'Iced Tea',
-    'Softdrinks',
-    'Calamansi Juice',
-    'Fresh Buko Juice (optional)'
-  ];
+    return filtered;
+  }, [activeFilter, searchQuery]);
+
+  const handleFilterClick = (filterId) => {
+    setActiveFilter(filterId);
+  };
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
       <div className="w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">Menu</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">Menu</h1>
+        
+        {/* Filter Buttons */}
+        <div className="flex justify-center gap-4 mb-10 flex-wrap">
+          {filterCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => handleFilterClick(category.id)}
+              className={`px-6 py-2.5 rounded-full font-medium text-base transition-all duration-300 ${
+                activeFilter === category.id
+                  ? 'bg-[#E30613] text-white shadow-lg shadow-red-500/40'
+                  : 'bg-white text-gray-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:text-[#E30613]'
+              }`}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
 
-        {/* Lugaw */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Lugaw
-            </h2>
-            <p className="text-gray-600 mb-4">Warm and comforting rice porridge—perfect for any time of day.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {lugaw.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
-                </div>
-              ))}
-            </div>
+        {/* Search Results Message */}
+        {searchQuery && (
+          <div className="max-w-2xl mx-auto mb-8">
+            <p className="text-sm text-gray-600 text-center">
+              {filteredItems.length > 0 
+                ? `Found ${filteredItems.length} result${filteredItems.length !== 1 ? 's' : ''} for "${searchQuery}"` 
+                : `No results found for "${searchQuery}"`}
+            </p>
           </div>
-        </section>
+        )}
 
-        {/* Sinigang, Sabaw & Classic Soups */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Sinigang, Sabaw & Classic Soups
-            </h2>
-            <p className="text-gray-600 mb-4">Warm, hearty soups cooked low and slow to bring out authentic flavors.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {soups.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  {item === 'Sinigang na Baboy' && (
-                    <div className="mb-4 flex justify-center">
-                      <Image 
-                        src="/image.png" 
-                        alt="Sinigang na Baboy" 
-                        width={200} 
-                        height={200}
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
+        {/* Unified Food Grid */}
+        {filteredItems.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+            {filteredItems.map((item, index) => (
+              <div
+                key={`${item.category}-${index}`}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-1"
+                style={{
+                  animation: 'fadeIn 0.5s ease-in-out'
+                }}
+              >
+                {item.image && (
+                  <div className="relative w-full h-48 bg-gray-100 flex items-center justify-center">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={200}
+                      height={200}
+                      className="object-contain"
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {item.name}
+                  </h3>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
-
-        {/* Seafood Specials */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Seafood Specials
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {seafood.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
-                </div>
-              ))}
-            </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-xl text-gray-600 mb-2">
+              {searchQuery 
+                ? `No menu items found for "${searchQuery}"` 
+                : 'No items found in this category'}
+            </p>
+            <p className="text-gray-500">Try selecting a different filter or search term.</p>
           </div>
-        </section>
-
-        {/* Vegetable Favorites */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Vegetable Favorites
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {vegetables.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  {item === 'Pinakbet' && (
-                    <div className="mb-4 flex justify-center">
-                      <Image 
-                        src="/143526-480x270-removebg-preview (1).png" 
-                        alt="Pinakbet" 
-                        width={200} 
-                        height={200}
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pampahimagas / Merienda */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Pampahimagas / Merienda
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {merienda.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Drinks */}
-        <section className="mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              Drinks
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {drinks.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  <p className="text-lg font-medium text-gray-800">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        )}
       </div>
     </div>
   );

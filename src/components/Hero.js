@@ -42,7 +42,7 @@ export default function Hero() {
         </h3>
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-tight text-center drop-shadow-lg">
-          Jerry&apos;s LTB Tokwat&apos;T Baboy
+          Jerry&apos;s Lugaw Tokwa&apos;t Baboy
         </h1>
         
         <p className="text-gray-200 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed text-center drop-shadow-md">
