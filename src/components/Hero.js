@@ -1,6 +1,24 @@
 'use client';
 
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function Hero() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Navigate to menu page with search query
+      router.push(`/menu?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center px-6 md:px-12 lg:px-24 py-12 overflow-hidden">
       {/* Video Background */}
@@ -24,8 +42,7 @@ export default function Hero() {
         </h3>
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-tight text-center drop-shadow-lg">
-          The world of <br />
-          <span className="text-white">Tasty & Fresh Food.</span>
+          Jerry&apos;s LTB Tokwat&apos;T Baboy
         </h1>
         
         <p className="text-gray-200 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed text-center drop-shadow-md">
@@ -33,7 +50,7 @@ export default function Hero() {
         </p>
 
         {/* Search Box */}
-        <div className="w-full max-w-2xl relative mt-4 shadow-lg rounded-md">
+        <form onSubmit={handleSearch} className="w-full max-w-2xl relative mt-4 shadow-lg rounded-md">
           <div className="flex items-center bg-white border border-gray-100 rounded-md overflow-hidden p-2">
             <div className="pl-4 text-gray-400">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,13 +60,18 @@ export default function Hero() {
             <input 
               type="text" 
               placeholder="Search, Burger..." 
+              value={searchQuery}
+              onChange={handleInputChange}
               className="flex-grow px-4 py-4 text-lg text-gray-700 focus:outline-none"
             />
-            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-10 py-4 rounded-md shadow-md">
+            <button 
+              type="submit"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-10 py-4 rounded-md shadow-md transition-colors"
+            >
               Search
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
