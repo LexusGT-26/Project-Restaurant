@@ -37,7 +37,7 @@ export default function Hero() {
       
       {/* Content */}
       <div className="w-full flex flex-col items-center justify-center space-y-6 z-[2] relative mt-8 md:mt-0">
-        <h3 className="text-red-400 font-bold text-2xl md:text-3xl lg:text-4xl tracking-wide uppercase text-center drop-shadow-md">
+        <h3 className="text-white font-bold text-2xl md:text-3xl lg:text-4xl tracking-wide uppercase text-center drop-shadow-md">
           Welcome to
         </h3>
         
@@ -66,7 +66,10 @@ export default function Hero() {
             />
             <button 
               type="submit"
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-10 py-4 rounded-md shadow-md transition-colors"
+              className="text-white font-semibold text-lg px-10 py-4 rounded-md shadow-md transition-colors"
+              style={{ backgroundColor: '#D3AC8B' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#C19A7A'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#D3AC8B'}
             >
               Search
             </button>

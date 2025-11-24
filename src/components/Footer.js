@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="text-gray-800" style={{ backgroundColor: '#D3AC8B' }}>
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-4">Jerry&apos;s LTB</h3>
+            <h3 className="text-gray-900 text-xl font-bold mb-4">Jerry&apos;s LTB</h3>
             <p className="text-sm leading-relaxed">
               Serving authentic Filipino cuisine with a modern twist. Experience the rich flavors and warm hospitality that make every meal memorable.
             </p>
@@ -17,25 +17,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-gray-900 text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-white transition-colors text-sm">
+                <Link href="/" className="hover:text-gray-900 transition-colors text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="hover:text-white transition-colors text-sm">
+                <Link href="/menu" className="hover:text-gray-900 transition-colors text-sm">
                   Menu
                 </Link>
               </li>
               <li>
-                <Link href="/story" className="hover:text-white transition-colors text-sm">
+                <Link href="/story" className="hover:text-gray-900 transition-colors text-sm">
                   Our Story
                 </Link>
               </li>
               <li>
-                <Link href="/branches" className="hover:text-white transition-colors text-sm">
+                <Link href="/branches" className="hover:text-gray-900 transition-colors text-sm">
                   Branches
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-gray-900 text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,9 +68,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Business Hours */}
+          {/* Open Hours */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Business Hours</h3>
+            <h3 className="text-gray-900 text-lg font-semibold mb-4">Open Hours</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex justify-between">
                 <span>Monday - Thursday</span>
@@ -89,15 +89,20 @@ export default function Footer() {
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col items-center space-y-4">
+            {/* Copyright */}
+            <div className="text-sm text-center">
+              <p>&copy; {new Date().getFullYear()} Jerry&apos;s LTB. All rights reserved.</p>
+            </div>
+
             {/* Social Media Links */}
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors text-white"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -108,7 +113,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors text-white"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -119,18 +124,13 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors text-white"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                 </svg>
               </a>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-sm text-center md:text-right">
-              <p>&copy; {new Date().getFullYear()} Jerry&apos;s LTB. All rights reserved.</p>
             </div>
           </div>
         </div>
