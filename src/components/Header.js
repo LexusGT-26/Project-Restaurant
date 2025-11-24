@@ -24,7 +24,7 @@ export default function Header() {
   };
 
   return (
-    <header className="shadow-md sticky top-0 z-50" style={{ backgroundColor: '#D3AC8B' }}>
+    <header className="shadow-md sticky top-0 z-50" style={{ backgroundColor: '#ede0d4' }}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Title */}

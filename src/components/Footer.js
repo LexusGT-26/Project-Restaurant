@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="text-gray-800" style={{ backgroundColor: '#D3AC8B' }}>
+    <footer className="text-gray-800" style={{ backgroundColor: '#ede0d4' }}>
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
@@ -17,7 +17,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ color: '#28303d' }}>Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="hover:text-gray-900 transition-colors text-sm">
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Open Hours */}
           <div>
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">Open Hours</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ color: '#28303d' }}>Open Hours</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex justify-between">
                 <span>Monday - Thursday</span>
@@ -92,7 +92,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col items-center space-y-4">
             {/* Copyright */}
-            <div className="text-sm text-center">
+            <div className="text-sm text-center w-full max-w-4xl mx-auto">
               <p>&copy; {new Date().getFullYear()} Jerry&apos;s LTB. All rights reserved.</p>
             </div>
 
