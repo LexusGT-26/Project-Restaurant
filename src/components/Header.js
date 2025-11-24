@@ -36,7 +36,7 @@ export default function Header() {
               height={50}
               className="object-contain"
             />
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-2xl font-bold text-gray-900 font-cooper-black">
               Jerry&apos;s LTB
             </span>
           </Link>

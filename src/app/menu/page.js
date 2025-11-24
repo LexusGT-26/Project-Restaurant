@@ -101,11 +101,12 @@ export default function Menu() {
             <button
               key={category.id}
               onClick={() => handleFilterClick(category.id)}
-              className={`px-6 py-2.5 rounded-full font-medium text-base transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full font-medium text-base transition-all duration-300 font-cooper-black ${
                 activeFilter === category.id
-                  ? 'bg-[#E30613] text-white shadow-lg shadow-red-500/40'
-                  : 'bg-white text-gray-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:text-[#E30613]'
+                  ? 'text-white shadow-lg'
+                  : 'bg-white text-gray-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:text-[#D3AC8B]'
               }`}
+              style={activeFilter === category.id ? { backgroundColor: '#D3AC8B' } : {}}
             >
               {category.label}
             </button>
@@ -146,7 +147,7 @@ export default function Menu() {
                   </div>
                 )}
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-cooper-black">
                     {item.name}
                   </h3>
                 </div>
