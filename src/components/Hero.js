@@ -45,7 +45,7 @@ export default function Hero() {
           Jerry&apos;s Lugaw Tokwa&apos;t Baboy
         </h1>
         
-        <p className="text-gray-200 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed text-center drop-shadow-md">
+        <p className="text-gray-200 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed text-center drop-shadow-md" style={{ lineHeight: '1.7' }}>
           Keep it easy with these simple but delicious recipes from make-ahead lunches and midweek meals to fuss-free sides.
         </p>
 
@@ -66,10 +66,16 @@ export default function Hero() {
             />
             <button 
               type="submit"
-              className="text-white font-semibold text-lg px-10 py-4 rounded-md shadow-md transition-colors"
-              style={{ backgroundColor: '#D3AC8B' }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#C19A7A'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#D3AC8B'}
+              className="font-semibold text-lg px-10 py-4 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+              style={{ backgroundColor: '#D3AC8B', color: '#1a0f08' }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#c58e4a';
+                e.target.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#D3AC8B';
+                e.target.style.color = '#1a0f08';
+              }}
             >
               Search
             </button>

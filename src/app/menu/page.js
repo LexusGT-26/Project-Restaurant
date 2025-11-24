@@ -17,42 +17,42 @@ export default function Menu() {
   // Unified menu items array with category metadata
   const menuItems = [
     // Lugaw items
-    { name: 'Lugaw', category: 'lugaw' },
-    { name: 'Lugaw with Tokwa\'t Baboy', category: 'lugaw' },
-    { name: 'Lugaw with Chicken', category: 'lugaw' },
-    { name: 'Lugaw with Beef', category: 'lugaw' },
-    { name: 'Arroz Caldo', category: 'lugaw' },
+    { name: 'Lugaw', category: 'lugaw', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop', price: 25 },
+    { name: 'Lugaw with Tokwa\'t Baboy', category: 'lugaw', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop', price: 50 },
+    { name: 'Lugaw with Chicken', category: 'lugaw', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop', price: 55 },
+    { name: 'Lugaw with Beef', category: 'lugaw', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop', price: 60 },
+    { name: 'Arroz Caldo', category: 'lugaw', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop', price: 50 },
     
     // Soups items
-    { name: 'Sinigang na Baboy', category: 'soups', image: '/image.png' },
-    { name: 'Tinola', category: 'soups' },
-    { name: 'Nilagang Baka', category: 'soups' },
-    { name: 'Bulalo (if available)', category: 'soups' },
+    { name: 'Sinigang na Baboy', category: 'soups', image: '/image.png', price: 80 },
+    { name: 'Tinola', category: 'soups', image: 'https://images.unsplash.com/photo-1604909052743-94d1340e7d51?w=400&h=300&fit=crop', price: 75 },
+    { name: 'Nilagang Baka', category: 'soups', image: 'https://images.unsplash.com/photo-1604909052743-94d1340e7d51?w=400&h=300&fit=crop', price: 90 },
+    { name: 'Bulalo (if available)', category: 'soups', image: 'https://images.unsplash.com/photo-1604909052743-94d1340e7d51?w=400&h=300&fit=crop', price: 120 },
     
     // Seafood items
-    { name: 'Sweet & Sour Fish', category: 'seafood' },
-    { name: 'Ginataang Tilapia', category: 'seafood' },
-    { name: 'Daing / Fried Fish', category: 'seafood' },
-    { name: 'Calamares', category: 'seafood' },
+    { name: 'Sweet & Sour Fish', category: 'seafood', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop', price: 85 },
+    { name: 'Ginataang Tilapia', category: 'seafood', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop', price: 75 },
+    { name: 'Daing / Fried Fish', category: 'seafood', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop', price: 70 },
+    { name: 'Calamares', category: 'seafood', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop', price: 90 },
     
     // Vegetables items
-    { name: 'Pinakbet', category: 'vegetables', image: '/143526-480x270-removebg-preview (1).png' },
-    { name: 'Chop Suey', category: 'vegetables' },
-    { name: 'Laing', category: 'vegetables' },
-    { name: 'Ginisang Mongo', category: 'vegetables' },
+    { name: 'Pinakbet', category: 'vegetables', image: '/143526-480x270-removebg-preview (1).png', price: 65 },
+    { name: 'Chop Suey', category: 'vegetables', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop', price: 60 },
+    { name: 'Laing', category: 'vegetables', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop', price: 65 },
+    { name: 'Ginisang Mongo', category: 'vegetables', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop', price: 55 },
     
     // Merienda items
-    { name: 'Pancit Canton', category: 'merienda' },
-    { name: 'Spaghetti', category: 'merienda' },
-    { name: 'Palabok', category: 'merienda' },
-    { name: 'Turon', category: 'merienda' },
-    { name: 'Kutsinta / Puto', category: 'merienda' },
+    { name: 'Pancit Canton', category: 'merienda', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop', price: 50 },
+    { name: 'Spaghetti', category: 'merienda', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop', price: 55 },
+    { name: 'Palabok', category: 'merienda', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop', price: 60 },
+    { name: 'Turon', category: 'merienda', image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=300&fit=crop', price: 20 },
+    { name: 'Kutsinta / Puto', category: 'merienda', image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=300&fit=crop', price: 15 },
     
     // Drinks items
-    { name: 'Iced Tea', category: 'drinks' },
-    { name: 'Softdrinks', category: 'drinks' },
-    { name: 'Calamansi Juice', category: 'drinks' },
-    { name: 'Fresh Buko Juice (optional)', category: 'drinks' },
+    { name: 'Iced Tea', category: 'drinks', image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop', price: 20 },
+    { name: 'Softdrinks', category: 'drinks', image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop', price: 25 },
+    { name: 'Calamansi Juice', category: 'drinks', image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop', price: 30 },
+    { name: 'Fresh Buko Juice (optional)', category: 'drinks', image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop', price: 40 },
   ];
 
   // Filter categories
@@ -93,7 +93,7 @@ export default function Menu() {
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
       <div className="w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">Menu</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center font-cooper-black" style={{ color: '#1a0f08' }}>Menu</h1>
         
         {/* Filter Buttons */}
         <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -101,12 +101,25 @@ export default function Menu() {
             <button
               key={category.id}
               onClick={() => handleFilterClick(category.id)}
-              className={`px-6 py-2.5 rounded-full font-medium text-base transition-all duration-300 font-cooper-black ${
+              className={`px-8 py-3 rounded-full font-medium text-base transition-all duration-300 font-cooper-black ${
                 activeFilter === category.id
-                  ? 'text-white shadow-lg'
-                  : 'bg-white text-gray-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:text-[#D3AC8B]'
+                  ? 'text-white shadow-lg shadow-[#D3AC8B]/30'
+                  : 'bg-white shadow-md hover:shadow-lg hover:-translate-y-1 hover:scale-105'
               }`}
-              style={activeFilter === category.id ? { backgroundColor: '#D3AC8B' } : {}}
+              style={activeFilter === category.id 
+                ? { backgroundColor: '#D3AC8B', color: '#1a0f08' } 
+                : { color: '#2d1f14' }
+              }
+              onMouseEnter={(e) => {
+                if (activeFilter !== category.id) {
+                  e.target.style.color = '#D3AC8B';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeFilter !== category.id) {
+                  e.target.style.color = '#2d1f14';
+                }
+              }}
             >
               {category.label}
             </button>
@@ -130,38 +143,40 @@ export default function Menu() {
             {filteredItems.map((item, index) => (
               <div
                 key={`${item.category}-${index}`}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-1"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
                 style={{
                   animation: 'fadeIn 0.5s ease-in-out'
                 }}
               >
-                {item.image && (
-                  <div className="relative w-full h-48 bg-gray-100 flex items-center justify-center">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={200}
-                      height={200}
-                      className="object-contain"
-                    />
-                  </div>
-                )}
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-cooper-black">
+                <div className="relative w-full h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                    unoptimized
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold mb-2 font-cooper-black" style={{ color: '#1a0f08' }}>
                     {item.name}
                   </h3>
+                  <p className="text-xl font-bold" style={{ color: '#D3AC8B' }}>
+                    ₱{item.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-xl text-gray-600 mb-2">
+            <p className="text-xl mb-2" style={{ color: '#2d1f14' }}>
               {searchQuery 
                 ? `No menu items found for "${searchQuery}"` 
                 : 'No items found in this category'}
             </p>
-            <p className="text-gray-500">Try selecting a different filter or search term.</p>
+            <p style={{ color: '#5C4033' }}>Try selecting a different filter or search term.</p>
           </div>
         )}
       </div>

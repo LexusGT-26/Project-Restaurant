@@ -5,37 +5,37 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="text-gray-800" style={{ backgroundColor: '#ede0d4' }}>
-      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-12">
+      <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-gray-900 text-xl font-bold mb-4">Jerry&apos;s LTB</h3>
-            <p className="text-sm leading-relaxed">
+            <h3 className="text-xl font-bold mb-4 font-cooper-black" style={{ color: '#1a0f08' }}>Jerry&apos;s LTB</h3>
+            <p className="text-base leading-relaxed" style={{ color: '#2d1f14' }}>
               Serving authentic Filipino cuisine with a modern twist. Experience the rich flavors and warm hospitality that make every meal memorable.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: '#28303d' }}>Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 font-cooper-black" style={{ color: '#1a0f08' }}>Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-gray-900 transition-colors text-sm">
+                <Link href="/" className="hover:text-[#1a0f08] hover:underline transition-colors text-base" style={{ color: '#2d1f14' }}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="hover:text-gray-900 transition-colors text-sm">
+                <Link href="/menu" className="hover:text-[#1a0f08] hover:underline transition-colors text-base" style={{ color: '#2d1f14' }}>
                   Menu
                 </Link>
               </li>
               <li>
-                <Link href="/story" className="hover:text-gray-900 transition-colors text-sm">
+                <Link href="/story" className="hover:text-[#1a0f08] hover:underline transition-colors text-base" style={{ color: '#2d1f14' }}>
                   Our Story
                 </Link>
               </li>
               <li>
-                <Link href="/branches" className="hover:text-gray-900 transition-colors text-sm">
+                <Link href="/branches" className="hover:text-[#1a0f08] hover:underline transition-colors text-base" style={{ color: '#2d1f14' }}>
                   Branches
                 </Link>
               </li>
@@ -44,8 +44,8 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-gray-900 text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="text-lg font-bold mb-4 font-cooper-black" style={{ color: '#1a0f08' }}>Contact Us</h3>
+            <ul className="space-y-3 text-base" style={{ color: '#2d1f14' }}>
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -70,8 +70,8 @@ export default function Footer() {
 
           {/* Open Hours */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: '#28303d' }}>Open Hours</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-lg font-bold mb-4 font-cooper-black" style={{ color: '#1a0f08' }}>Open Hours</h3>
+            <ul className="space-y-2 text-base" style={{ color: '#2d1f14' }}>
               <li className="flex justify-between">
                 <span>Monday - Thursday</span>
                 <span>11:00 AM - 10:00 PM</span>
@@ -92,7 +92,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col items-center space-y-4">
             {/* Copyright */}
-            <div className="text-sm text-center w-full max-w-4xl mx-auto">
+            <div className="text-base text-center w-full max-w-4xl mx-auto" style={{ color: '#2d1f14' }}>
               <p>&copy; {new Date().getFullYear()} Jerry&apos;s LTB. All rights reserved.</p>
             </div>
 

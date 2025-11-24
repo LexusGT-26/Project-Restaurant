@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className="shadow-md sticky top-0 z-50" style={{ backgroundColor: '#ede0d4' }}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo/Title */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <Image 
@@ -36,7 +36,7 @@ export default function Header() {
               height={50}
               className="object-contain"
             />
-            <span className="text-2xl font-bold text-gray-900 font-cooper-black">
+            <span className="text-2xl font-bold font-cooper-black" style={{ color: '#1a0f08' }}>
               Jerry&apos;s LTB
             </span>
           </Link>
@@ -49,13 +49,13 @@ export default function Header() {
                 href={item.href}
                 className={`relative px-6 py-3 text-base font-medium transition-colors font-cooper-black ${
                   isActive(item.href)
-                    ? 'text-gray-900'
-                    : 'text-gray-800 hover:text-gray-900'
+                    ? 'text-[#1a0f08]'
+                    : 'text-[#2d1f14] hover:text-[#1a0f08]'
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1a0f08]"></span>
                 )}
               </Link>
             ))}
@@ -63,7 +63,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-900 hover:opacity-80 transition-opacity"
+            className="md:hidden p-2 text-[#1a0f08] hover:opacity-80 transition-opacity"
             aria-label="Menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -106,8 +106,8 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-6 py-4 text-base font-medium transition-colors font-cooper-black ${
                     isActive(item.href)
-                      ? 'text-gray-900 bg-gray-200/50'
-                      : 'text-gray-800 hover:text-gray-900 hover:bg-gray-200/30'
+                      ? 'text-[#1a0f08] bg-gray-200/50'
+                      : 'text-[#2d1f14] hover:text-[#1a0f08] hover:bg-gray-200/30'
                   }`}
                 >
                   {item.name}
